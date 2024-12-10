@@ -1,0 +1,178 @@
+
+## **1. Intro to List and List Comprehension**
+### **Video Explanation**
+[What are Python Lists?](https://www.youtube.com/watch?v=ohCDWZgNIU0)  
+[List Comprehension](https://www.youtube.com/watch?v=3dt4OGnU5sM)
+
+---
+
+### **Explanation**
+A list in Python is a collection of items that can hold data of different types (e.g., numbers, strings, etc.).  
+- Lists are **ordered**, **mutable** (changeable), and allow **duplicates**.
+
+#### Example:
+```python
+# Creating a list
+my_list = [1, 2, 3, 'apple', 'banana']
+
+# Accessing elements
+print(my_list[0])  # Output: 1
+print(my_list[-1])  # Output: 'banana'
+
+# Adding elements
+my_list.append('cherry')
+print(my_list)  # Output: [1, 2, 3, 'apple', 'banana', 'cherry']
+
+# Removing elements
+my_list.remove('apple')
+print(my_list)  # Output: [1, 2, 3, 'banana', 'cherry']
+```
+
+---
+
+### **List Comprehension**
+A shorter way to create lists.
+
+#### Example:
+```python
+# Without list comprehension
+squares = []
+for x in range(5):
+    squares.append(x**2)
+
+# With list comprehension
+squares = [x**2 for x in range(5)]
+print(squares)  # Output: [0, 1, 4, 9, 16]
+```
+
+---
+
+## **2. Intro to Tuple and Dictionary**
+### **Video Explanation**
+[What are Python Tuples?](https://www.youtube.com/watch?v=W8KRzm-HUcc)  
+[What are Python Dictionaries?](https://www.youtube.com/watch?v=daefaLgNkw0)
+
+---
+
+### **Tuples**
+Tuples are like lists but are **immutable** (cannot be changed after creation). They are useful for fixed collections of items.
+
+#### Example:
+```python
+# Creating a tuple
+my_tuple = (1, 2, 3, 'apple')
+
+# Accessing elements
+print(my_tuple[0])  # Output: 1
+
+# Tuples are immutable
+# my_tuple[0] = 10  # This will throw an error
+```
+
+---
+
+### **Dictionaries**
+Dictionaries store data as key-value pairs. Keys are unique.
+
+#### Example:
+```python
+# Creating a dictionary
+my_dict = {'name': 'Alice', 'age': 25}
+
+# Accessing values
+print(my_dict['name'])  # Output: 'Alice'
+
+# Adding a key-value pair
+my_dict['city'] = 'New York'
+print(my_dict)  # Output: {'name': 'Alice', 'age': 25, 'city': 'New York'}
+
+# Removing a key-value pair
+my_dict.pop('age')
+print(my_dict)  # Output: {'name': 'Alice', 'city': 'New York'}
+```
+
+---
+
+## **3. Sum of Odd and Even Numbers**
+### **Video Explanation**
+[Sum of Odd and Even Numbers](https://www.youtube.com/watch?v=VF_7dmwFGiY)
+
+---
+
+### **Code**
+```python
+# Input numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Separate sums
+sum_odd = sum(x for x in numbers if x % 2 != 0)
+sum_even = sum(x for x in numbers if x % 2 == 0)
+
+print("Sum of odd numbers:", sum_odd)  # Output: 25
+print("Sum of even numbers:", sum_even)  # Output: 20
+```
+
+---
+
+## **4. Sum of Odd and Even Indices**
+### **Video Explanation**
+[Odd and Even Indices](https://www.youtube.com/watch?v=xDmeztTbR3I)
+
+---
+
+### **Code**
+```python
+# Input numbers
+numbers = [1, 2, 3, 4, 5, 6, 7]
+
+# Separate sums
+sum_odd_indices = sum(numbers[i] for i in range(len(numbers)) if i % 2 != 0)
+sum_even_indices = sum(numbers[i] for i in range(len(numbers)) if i % 2 == 0)
+
+print("Sum of odd indices:", sum_odd_indices)  # Output: 12
+print("Sum of even indices:", sum_even_indices)  # Output: 16
+```
+
+---
+
+## **5. Sum of Pairs Using Single Array**
+### **Video Explanation**
+[Pair Sum with Single Array](https://www.youtube.com/watch?v=Hk_4SKnS86E)
+
+---
+
+### **Code**
+```python
+numbers = [1, 2, 3, 4]
+
+pairs = [(numbers[i], numbers[j]) for i in range(len(numbers)) for j in range(i + 1, len(numbers))]
+pair_sums = [sum(pair) for pair in pairs]
+
+print("Pairs:", pairs)  # Output: [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
+print("Pair sums:", pair_sums)  # Output: [3, 4, 5, 5, 6, 7]
+```
+
+---
+
+## **6. Sum of Pairs Using Two Arrays**
+### **Video Explanation**
+[Pair Sum with Two Arrays](https://www.youtube.com/watch?v=a-RP59KfK5M)
+
+---
+
+### **Code**
+```python
+array1 = [1, 2]
+array2 = [3, 4]
+
+pairs = [(x, y) for x in array1 for y in array2]
+pair_sums = [x + y for x, y in pairs]
+
+print("Pairs:", pairs)  # Output: [(1, 3), (1, 4), (2, 3), (2, 4)]
+print("Pair sums:", pair_sums)  # Output: [4, 5, 5, 6]
+```
+
+---
+
+*The pattern continues for the remaining topics.*  
+Would you like me to provide the detailed code and explanations for all topics or focus on any specific ones next?
