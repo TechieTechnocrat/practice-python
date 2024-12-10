@@ -3,9 +3,7 @@
 ### **Video Explanation**
 [What are Python Lists?](https://www.youtube.com/watch?v=ohCDWZgNIU0)  
 [List Comprehension](https://www.youtube.com/watch?v=3dt4OGnU5sM)
-
 ---
-
 ### **Explanation**
 A list in Python is a collection of items that can hold data of different types (e.g., numbers, strings, etc.).  
 - Lists are **ordered**, **mutable** (changeable), and allow **duplicates**.
