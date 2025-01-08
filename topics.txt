@@ -169,8 +169,8 @@ pair_sums = [x + y for x, y in pairs]
 print("Pairs:", pairs)  # Output: [(1, 3), (1, 4), (2, 3), (2, 4)]
 print("Pair sums:", pair_sums)  # Output: [4, 5, 5, 6]
 ```
-
----
-
-*The pattern continues for the remaining topics.*  
-Would you like me to provide the detailed code and explanations for all topics or focus on any specific ones next?
+Inputs in Python 
+        --> Python's built in input() function always returns string class 
+        --> to have a int input, type cast to int 
+        --> try : user_input = int(input("Enter an Integer))
+        --> except ValueError: 
