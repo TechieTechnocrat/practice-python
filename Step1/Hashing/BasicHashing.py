@@ -28,6 +28,9 @@ class HashTable:
     def get(self, key):
         h = self.get_hash(key) #__setItem__
         return self.arr[h]
+    def delete(self, key):
+        h = self.get_hash(key)
+        self.arr[h] = None
 
 
 #now create an object 
