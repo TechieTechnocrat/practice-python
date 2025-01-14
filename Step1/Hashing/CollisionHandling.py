@@ -1,30 +1,22 @@
 #lets implement chaining in python
 
-class myHashTable:
-    def __init__(self):
-        self.MAX = 10
-        self.arr = [None for i in range(self.MAX)]
+# class myHashTable:
+#     def __init__(self):
+#         self.MAX = 10
+#         self.arr = [None for i in range(self.MAX)]
 
-    def get_hash(self, key):
-        hash = 0
-        for char in key:
-            hash += ord(char)
-        return hash % self.MAX
-    def __getitem__(self, index):
-        h = self.get_hash(index)
-        return self.arr[h]
-    def __setitem__(self, key, val):
-        h = self.get_hash(key)
-        self.arr[h] = val
+#     def get_hash(self, key):
+#         hash = 0
+#         for char in key:
+#             hash += ord(char)
+#         return hash % self.MAX
+#     def __getitem__(self, index):
+#         h = self.get_hash(index)
+#         return self.arr[h]
+#     def __setitem__(self, key, val):
+#         h = self.get_hash(key)
+#         self.arr[h] = val
     
-t = myHashTable()
-t["march 6"] = 120
-t["march 8"] = 110
-t["march 9"] = 100
-t["march 17"] = 20
-t["march 18"] = 10
-    
-print(t["march 6"])
 
 #now march 17 overwritten the value for march 6
 #so when we print we will get 20 instead of 120
@@ -44,13 +36,17 @@ class myHashTable:
         for char in key:
             hash += ord(char)
         return hash % self.MAX
+
     def __getitem__(self, index):
         h = self.get_hash(index)
-        return self.arr[h]
+        for element in self.arr[h]:
+            if element[0] == index:
+                return element[1]
+            
+
     def __setitem__(self, key, val):
         h = self.get_hash(key)
-        #check in linkedlist now
-        #check if that key exists already in linked list 
+        found = False  # Initialize the 'found' variable
         for idx, element in enumerate(self.arr[h]):
             if len(element) == 2 and element[0] == key:
                 self.arr[h][idx] = (key, val)
@@ -58,7 +54,20 @@ class myHashTable:
                 break
         if not found:
             self.arr[h].append((key, val))
-                                   
+
+
+# Testing the hash table
+t = myHashTable()
+t["march 6"] = 120
+t["march 6"] = 1120
+t["march 8"] = 110
+t["march 9"] = 100
+t["march 17"] = 20
+t["march 18"] = 10
+
+print(t.arr)
+print(t["march 17"])
+
 
 # Collision Handling:
 # If multiple key-value pairs exist at the same index (chaining), the code checks if the key already exists.
