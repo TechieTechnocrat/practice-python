@@ -2,7 +2,6 @@ timegiven = "12:00:00AM"
 ampm = timegiven[-2:]
 print(ampm)
 
-# Extract the hour, minute, and second from the input string
 hour = int(timegiven[:2])  # Get the hour as an integer
 minute = timegiven[3:5]  # Get the minute as a string
 second = timegiven[6:8]  # Get the second as a string
