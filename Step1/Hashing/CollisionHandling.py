@@ -24,7 +24,11 @@
 
 #now lets make modifications 
 #instead of strong none we will store []
-# Inserts or updates a key-value pair: __setItem__ if key already exists --> update the value, if not append the new key - value pair to handle collision
+# Inserts or updates a key-value pair: 
+# __setItem__ if key already exists --> 
+# update the value, if not append the new key - 
+# value pair to handle collision
+
 
 class myHashTable:
     def __init__(self):
@@ -54,6 +58,8 @@ class myHashTable:
                 break
         if not found:
             self.arr[h].append((key, val))
+    def _deleteitem__(self, key):
+        h = self.get_hash(key)
 
 
 # Testing the hash table
