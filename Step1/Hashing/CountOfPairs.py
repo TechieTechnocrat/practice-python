@@ -13,3 +13,16 @@ for i in range(len(arr)):
         
 print(validpair, validpaircount)
 
+# in hashmap key will be element, value will be occurence
+index_map = {}
+validpairhashingcount = 0
+validpairhashing = []
+for i, num in enumerate(arr):
+    complementary_element = k - arr[i]
+    if complementary_element in index_map:
+        validpairhashingcount += 1
+        validpairhashing.append((i, index_map[complementary_element]))
+    else:
+        index_map[num] = i
+print(validpairhashing)
+
